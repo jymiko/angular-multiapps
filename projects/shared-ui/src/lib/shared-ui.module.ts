@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
-import { SharedUiComponent } from './shared-ui.component';
+import { ComponentIdentifierComponent } from './component-identifier/component-identifier.component';
+import { ComponentIdentifierModule } from './component-identifier/component-identifier.module';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarModule } from './navbar/navbar.module';
 
 
 
 @NgModule({
   declarations: [
-    SharedUiComponent
   ],
   imports: [
+    ComponentIdentifierModule,
+    NavbarModule,
+    CommonModule,
   ],
   exports: [
-    SharedUiComponent
+    ComponentIdentifierModule,
+    NavbarModule
   ]
 })
 export class SharedUiModule { }

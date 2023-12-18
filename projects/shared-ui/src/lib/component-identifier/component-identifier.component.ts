@@ -7,17 +7,36 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ComponentIdentifierComponent implements OnInit {
 
-  _componentName!:string;
+   _componentName!:string;
+  _path!:string;
+  _module!:string;
+  _project!:string;
   _bg!:'blue'|'red'|'green';
 
   @Input()
-  set ComponentName(name:string){
-    this.ComponentName = name
+  set componentName(name:string){
+    this._componentName=name;
+  }
+
+
+  @Input()
+  set path(path:string){
+    this._path=path;
   }
 
   @Input()
-  set Background(bg:'blue'|'red'|'green'){
-    this._bg = bg
+  set module(module:string){
+    this._module=module;
+  }
+
+  @Input()
+  set project(name:string){
+    this._project=name;
+  }
+
+  @Input()
+  set bg(bg:'blue'|'red'|'green'){
+    this._bg=bg;
   }
   constructor() { }
 

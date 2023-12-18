@@ -1,10 +1,10 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
+import { SharedUiModule } from 'projects/shared-ui/src/public-api';
 
 const providers: any = [];
 
@@ -15,7 +15,8 @@ const providers: any = [];
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedUiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
