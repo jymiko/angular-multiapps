@@ -3,17 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { App1SharedModule } from 'projects/app1/src/app/app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { InputComponent } from './shared/input/input.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NavbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

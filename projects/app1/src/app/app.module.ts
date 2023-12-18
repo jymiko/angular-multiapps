@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
-import { SharedUiModule } from 'projects/shared-ui/src/public-api';
+import { NavbarModule } from 'src/app/shared/navbar/navbar.module';
 
 const providers: any = [];
 
@@ -16,7 +16,7 @@ const providers: any = [];
   imports: [
     CommonModule,
     AppRoutingModule,
-    SharedUiModule
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
