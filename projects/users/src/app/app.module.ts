@@ -20,7 +20,7 @@ const providers: any = [];
   bootstrap: [AppComponent]
 })
 export class AppModuleUsers { 
-  static forRoot(): ModuleWithProviders<any> {
+  static forChild(): ModuleWithProviders<any> {
     return {
       ngModule: AppModuleUsers,
       providers

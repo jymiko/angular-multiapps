@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "dev:ssr": "ng run multiapps-v12:serve-ssr",
+    "serve:ssr": "node dist/multiapps-v12/server/main.js",
+    "build:ssr": "ng build && ng run multiapps-v12:server",
+    "prerender": "ng run multiapps-v12:prerender"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/platform-server": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@nguniversal/express-engine": "^12.1.3",
     "express": "^4.15.2",
     "rxjs": "~7.0.1",
     "tslib": "^2.3.0",
