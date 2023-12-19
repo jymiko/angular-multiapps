@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListModule } from './user-list/user-list.module';
 
-const providers: any = [];
-
 @NgModule({
   declarations: [
     AppComponent
@@ -19,11 +17,4 @@ const providers: any = [];
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModuleUsers { 
-  static forChild(): ModuleWithProviders<any> {
-    return {
-      ngModule: AppModuleUsers,
-      providers
-    }
-  }
-}
+export class AppModuleUsers { }
