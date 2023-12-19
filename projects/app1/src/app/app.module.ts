@@ -22,7 +22,7 @@ const providers: any = [];
   bootstrap: [AppComponent]
 })
 export class App1SharedModule {
-  static forRoot(): ModuleWithProviders<any> {
+  static forChild(): ModuleWithProviders<any> {
     return {
       ngModule: App1SharedModule,
       providers
