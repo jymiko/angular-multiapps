@@ -5,9 +5,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
 import { NavbarModule } from 'src/app/shared/navbar/navbar.module';
-
-const providers: any = [];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +18,5 @@ const providers: any = [];
   providers: [],
   bootstrap: [AppComponent]
 })
-export class App1SharedModule {
-  static forChild(): ModuleWithProviders<any> {
-    return {
-      ngModule: App1SharedModule,
-      providers
-    }
-  }
- }
+export class App1SharedModule {}
 

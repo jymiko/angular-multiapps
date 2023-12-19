@@ -10,8 +10,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
-    App1SharedModule.forChild(),
-    AppModuleUsers.forChild()
+    App1SharedModule,
+    AppModuleUsers
 ],
   exports: [RouterModule]
 })
