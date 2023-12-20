@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { GuardService } from './guard.service';
+import { App1Component } from 'projects/app1/src/app/app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,6 +13,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        GuardService,
+        App1Component
+      ]
     }).compileComponents();
   });
 
@@ -25,6 +31,12 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('multiapps-v12');
   });
+
+  it('should check when route is resolved', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges()
+    expect(fixture).toBeTruthy()
+  })
 
   // it('should render title', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
