@@ -21,7 +21,7 @@ describe('GuardService', () => {
   });
 
   it('should check guard active', () => {
-    const res = service.canActivate()
+    const res = service.canActivate
     expect(res).toBeTruthy()
   })
 });

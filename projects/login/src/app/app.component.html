@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<form>
+<form [formGroup]="form" (submit)="onSubmit()">
   <div>
     <input type="text" placeholder="Email" formControlName="email" />
   </div>

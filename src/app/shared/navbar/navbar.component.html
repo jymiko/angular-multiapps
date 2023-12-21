@@ -6,3 +6,11 @@
   <a routerLink="/users">Users</a>
 </button>
 <button mat-button>App 2</button>
+<button mat-button *ngIf="isLogin; else elseBlock" (click)="logoutUser()">
+  Logout
+</button>
+<ng-template #elseBlock>
+  <button mat-button>
+    <a routerLink="/login">Login</a>
+  </button>
+</ng-template>

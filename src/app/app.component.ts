@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppModule } from './app.module';
 import { App1Component } from 'projects/app1/src/app/app.component';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,13 @@ import { App1Component } from 'projects/app1/src/app/app.component';
 })
 export class AppComponent implements OnInit {
   title = 'multiapps-v12';
+  isLogin!: boolean;
 
-  constructor(private currentUserService:App1Component){}
+  constructor(private currentUserService:App1Component, private authService:AuthService){}
 
   ngOnInit(): void {
+    this.isLogin = this.authService.isLogin
+    console.log(this.isLogin)
     setTimeout(() => {
       this.currentUserService.setCurrentUser()
     }, 2000)
