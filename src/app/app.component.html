@@ -1,4 +1,4 @@
-<app-navbar [isLogin]="isLogin"></app-navbar>
+<app-navbar *ngIf="currentRoute !== '/login'" [isLogin]="isLogin"></app-navbar>
 <br/>
 <div>
   <router-outlet></router-outlet>

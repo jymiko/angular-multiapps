@@ -11,6 +11,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
 import { GuardService } from './guard.service';
 import { App1SharedModule } from 'projects/app1/src/app/app.module';
 import { ChildrenGuard } from './children.guard';
+import { CanLoadGuard } from './can-load.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ChildrenGuard } from './children.guard';
     HttpClientModule,
     App1SharedModule
   ],
-  providers: [GuardService, ChildrenGuard],
+  providers: [GuardService, ChildrenGuard, CanLoadGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,9 @@
 <button mat-button>
   <a routerLink="/users">Users</a>
 </button>
-<button mat-button>App 2</button>
+<button mat-button>
+  <a routerLink="/admin">Admin</a>
+</button>
 <button mat-button *ngIf="isLogin; else elseBlock" (click)="logoutUser()">
   Logout
 </button>
