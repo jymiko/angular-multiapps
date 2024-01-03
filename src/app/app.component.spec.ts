@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { GuardService } from './guard.service';
+import { GuardService } from './guard/guard.service';
 import { App1Component } from 'projects/app1/src/app/app.component';
 
 describe('AppComponent', () => {

@@ -1,10 +1,16 @@
-<!-- <lib-component-identifier
-componentName="BeeRedHappyComponent"
-path="pages/beehive-red-happy"
-module="BeeRedHappyModule"
-project="beehive-red"
-bg="red"
-></lib-component-identifier> -->
 <div class="text-3xl font-bold underline">
   home works
 </div>
+<br/>
+<!-- <app-input label="hello" inputId="myId" [formControl]="testControl" type="password"></app-input> -->
+
+<form [formGroup]="formGroup">
+  <app-input label="hello" inputId="myId" formControlName="name" type="password"></app-input>
+  <app-select
+    [customErrorMessages]="errorMessages"
+    label="Age"
+    selectId="myAge"
+    [options]="['1', '2', '3']"
+    formControlName="age"
+></app-select>
+</form>

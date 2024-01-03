@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SelectComponent } from './select.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { InputComponent } from './input.component';
 import { ValidationErrorsModule } from '../validation-errors/validation-errors.module';
 
 
 
 @NgModule({
-  declarations: [InputComponent],
+  declarations: [SelectComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     ValidationErrorsModule
   ],
-  exports: [InputComponent]
+  exports: [SelectComponent]
 })
-export class InputModule { }
+export class SelectModule { }

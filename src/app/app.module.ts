@@ -5,26 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './shared/navbar/navbar.module';
-import { InputComponent } from './shared/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
-import {TransferHttpCacheModule} from '@nguniversal/common';
-import { GuardService } from './guard.service';
+import { GuardService } from './guard/guard.service';
 import { App1SharedModule } from 'projects/app1/src/app/app.module';
-import { ChildrenGuard } from './children.guard';
-import { CanLoadGuard } from './can-load.guard';
+import { ChildrenGuard } from './guard/children.guard';
+import { CanLoadGuard } from './guard/can-load.guard';
+import { InputModule } from './shared/input/input.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     NavbarModule,
+    InputModule,
     HttpClientModule,
-    App1SharedModule
+    App1SharedModule,
   ],
   providers: [GuardService, ChildrenGuard, CanLoadGuard],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { App1Component } from 'projects/app1/src/app/app.component';
 import { AuthService } from './services/auth/auth.service';
-import { NavigationEnd, ResolveEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +21,9 @@ export class AppComponent implements OnInit {
     this.route.events.subscribe((routeData) => {
       if(routeData instanceof NavigationEnd){
         this.currentRoute = routeData.url
+        this.isLogin = this.authService.isLogin
       }
     })
-    this.isLogin = this.authService.isLogin
     setTimeout(() => {
       this.currentUserService.setCurrentUser()
     }, 2000)

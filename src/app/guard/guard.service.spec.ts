@@ -11,7 +11,7 @@ describe('GuardService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      providers: [GuardService, App1Component]
+      providers: [GuardService]
     });
     service = TestBed.inject(GuardService);
   });

@@ -16,6 +16,7 @@ export function app(): express.Express {
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
+    inlineCriticalCss: false,
     bootstrap: AppServerModule,
   }));
 
@@ -28,10 +29,29 @@ export function app(): express.Express {
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
+  server.use((req, res, next) => {
+    const { headers: { cookie } } = req;
+    const checkUrlPatterns = /(app1)\/.+/;
+    const withGuard = checkUrlPatterns.test(req.url);
+    if(withGuard){
+      if(cookie){
+        next()
+      }else {
+        res.redirect('/login')
+      }
+    }else{
+      next()
+    }
+    
+  })
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    res.render(indexHtml, { req, providers: [
+      { provide: APP_BASE_HREF, useValue: req.baseUrl },
+      { provide: 'REQUEST', useValue: req },
+      { provide: 'RESPONSE', useValue: res },
+    ] });
   });
 
   return server;
