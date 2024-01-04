@@ -1,0 +1,13 @@
+services:
+  image-csr:
+    build: 
+      context: .
+      dockerfile: Dockerfile-browser
+    ports:
+      - 4300:80
+  image-ssr:
+    build: 
+      context: .
+      dockerfile: Dockerfile-server
+    ports:
+      - 4000:4000
